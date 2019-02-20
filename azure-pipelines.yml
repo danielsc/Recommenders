@@ -16,5 +16,5 @@ steps:
 - script: |
     scripts/generate_conda_file.sh 
     conda env create -n conda_bare -f conda_bare.yaml
-    source activate conda_bare
+    conda activate conda_bare
   displayName: 'create conda_bare environment'
