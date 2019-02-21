@@ -13,8 +13,11 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
+- bash: echo "##vso[task.prependpath]/usr/share/miniconda/bin"
+  displayName: Add conda to PATH
+
 - script: |
     scripts/generate_conda_file.sh 
     conda env create -n conda_bare -f conda_bare.yaml
-    conda activate conda_bare
+    source activate conda_bare
   displayName: 'create conda_bare environment'
