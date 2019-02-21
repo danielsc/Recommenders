@@ -21,3 +21,11 @@ steps:
     conda env create -n conda_bare -f conda_bare.yaml
     source activate conda_bare
   displayName: 'create conda_bare environment'
+
+- script: |
+    pip freeze
+  displayName: 'pip freeze'
+
+- script: |
+    source activate conda_bare && pip freeze
+  displayName: 'pip freeze'
